@@ -57,6 +57,9 @@ assert("MaxMindDB#region_name") do
   maxminddb = MaxMindDB.new MaxMindDbDat
   maxminddb.lookup_string Data1[:ip_addr]
   File.delete(File.expand_path("../mruby-maxminddb/test/fixtures/GeoLite2-City.mmdb"))
+  File.open(File.expand_path("../mruby-maxminddb/test/fixtures/GeoLite2-City.mmdb"), "w") do |f|
+    f.puts("aaaaa")
+  end
   assert_equal(Data1[:region_name], maxminddb.region_name)
 end
 

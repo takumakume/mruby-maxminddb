@@ -109,7 +109,7 @@ assert("MaxMindDB#longitude") do
   assert_equal(FullDataExpect[:longitude], maxminddb.longitude.round(4))
 
   maxminddb.lookup_string PoorDataExpect[:ip_addr]
-  assert_equal(PoorDataExpect[:longitude], maxminddb.longitude.round(4))
+  assert_equal(PoorDataExpect[:longitude], maxminddb.longitude)
 end
 
 assert("MaxMindDB#metro_code") do
